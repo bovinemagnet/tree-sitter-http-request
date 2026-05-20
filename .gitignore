@@ -1,0 +1,7 @@
+node_modules/
+target/
+build/
+*.so
+*.dylib
+*.dll
+.tree-sitter-cache/
