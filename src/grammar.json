@@ -36,30 +36,12 @@
         "type": "CHOICE",
         "members": [
           {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "#"
-              },
-              {
-                "type": "PATTERN",
-                "value": ".*"
-              }
-            ]
+            "type": "PATTERN",
+            "value": "#{1,2}([^#\\n][^\\n]*)?"
           },
           {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "//"
-              },
-              {
-                "type": "PATTERN",
-                "value": ".*"
-              }
-            ]
+            "type": "PATTERN",
+            "value": "\\/\\/[^\\n]*"
           }
         ]
       }
@@ -371,40 +353,11 @@
       }
     },
     "body": {
-      "type": "REPEAT1",
+      "type": "TOKEN",
       "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "json_string"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "json_number"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "interpolation"
-          },
-          {
-            "type": "PATTERN",
-            "value": "[^\\n]+"
-          },
-          {
-            "type": "STRING",
-            "value": "\n"
-          }
-        ]
+        "type": "PATTERN",
+        "value": "([^#\\n][^\\n]*\\n?|#[^#\\n][^\\n]*\\n?|##[^#\\n][^\\n]*\\n?|\\n)+"
       }
-    },
-    "json_string": {
-      "type": "PATTERN",
-      "value": "\"([^\"\\\\]|\\\\.)*\""
-    },
-    "json_number": {
-      "type": "PATTERN",
-      "value": "-?\\d+(\\.\\d+)?"
     }
   },
   "extras": [

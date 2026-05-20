@@ -1,28 +1,5 @@
 [
   {
-    "type": "body",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "interpolation",
-          "named": true
-        },
-        {
-          "type": "json_number",
-          "named": true
-        },
-        {
-          "type": "json_string",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "header",
     "named": true,
     "fields": {
@@ -273,6 +250,10 @@
     "named": true
   },
   {
+    "type": "body",
+    "named": true
+  },
+  {
     "type": "comment",
     "named": true
   },
@@ -286,14 +267,6 @@
   },
   {
     "type": "interpolation",
-    "named": true
-  },
-  {
-    "type": "json_number",
-    "named": true
-  },
-  {
-    "type": "json_string",
     "named": true
   },
   {
